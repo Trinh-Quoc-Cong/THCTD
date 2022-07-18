@@ -1,0 +1,14 @@
+PROGRAM CTSUM; (*SUM OF TWO INTEGER*)
+VAR 	X : INTEGER;
+		Y : INTEGER;
+
+FUNCTION SUM(x : Integer ; y : Integer) : INTEGER;
+	Begin
+	 SUM := x + y;
+	end;
+Begin
+	X := READI;
+	Y := READI;
+	CALL WRITEI(SUM(X,Y));
+	CALL WRITELN;
+End.

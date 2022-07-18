@@ -1,0 +1,46 @@
+PROGRAM GTTD ; (*Tính tổng giá trị tuyệt đối của dãy số*)
+VAR A : ARRAY(.50.) OF INTEGER;
+     N : INTEGER;
+PROCEDURE INPUT;
+  VAR I : INTEGER;
+  BEGIN
+   N := READI;
+   FOR I:=1 TO N DO
+    A(.I.) := READI;
+  END;
+
+PROCEDURE OUTPUT;
+ VAR I:INTEGER;
+ BEGIN
+  FOR I:=1 TO N DO
+   BEGIN
+    CALL WRITEI(A(.I.));
+    CALL WRITELN;
+   END
+ END;
+
+FUNCTION ABS(X:INTEGER):INTEGER;
+ BEGIN
+  IF X >= 0 THEN ABS := X
+  ELSE ABS := -X;
+ END;
+
+FUNCTION SUMABS : INTEGER;
+ VAR I : INTEGER;
+     S : INTEGER;
+ BEGIN
+  S := 0;
+  I := 0;
+  WHILE I <= N DO
+   BEGIN
+    S := S + ABS(A(.I.));
+    I := I + 1;
+   END; (*kết thúc khối lệnh WHILE cần END;*)
+  SUMABS := S;
+ END;
+
+BEGIN
+ CALL INPUT;
+ CALL OUTPUT;
+ CALL WRITEI(SUMABS);
+END.

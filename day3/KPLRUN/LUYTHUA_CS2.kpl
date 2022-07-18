@@ -1,0 +1,22 @@
+PROGRAM LUYTHUA;
+VAR N : INTEGER;
+
+FUNCTION exp(n : INTEGER) : INTEGER;
+ VAR I:INTEGER;
+     kq:INTEGER;
+ BEGIN
+   IF n = 0 THEN exp := 1
+   ELSE
+     BEGIN
+	kq := 1;
+	FOR I:=1 TO n DO
+	   kq := kq*2;
+	exp := kq;
+     END
+ END;
+
+BEGIN
+  N:= READI;
+  CALL WRITEI(exp(N));
+  CALL WRITELN;
+END.
