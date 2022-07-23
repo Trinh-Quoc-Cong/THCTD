@@ -1,0 +1,16 @@
+Program DOIDIEM;
+Var N : Integer;
+
+Function CHANGE(n : Integer) : Char;
+    Begin
+        If n < 4 Then CHANGE := 'F'
+        Else If n < 5 Then CHANGE := 'D'
+        Else If n < 7 Then CHANGE := 'C'
+        Else If n < 9 Then CHANGE := 'B'
+        Else CHANGE := 'A';
+    End;    
+
+Begin
+    N := readI; 
+    call writeC(CHANGE(N));
+End.
